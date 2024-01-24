@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="BF07">
+  <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
+  </BOModel>
+  <NavigationItems StartupNavigationItem="Hoadon_ListView">
+    <Items>
+      <Item Id="Danhmuc" Caption="Danh mục" ImageName="BO_Report" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="NhomSP_ListView" ViewId="NhomSP_ListView" ObjectKey="" Index="0" IsNewNode="True" />
+          <Item Id="Sanpham_ListView" ViewId="Sanpham_ListView" ObjectKey="" Index="1" IsNewNode="True" />
+          <Item Id="Hoadon_ListView" ViewId="Hoadon_ListView" ObjectKey="" Index="2" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Default">
+        <Items>
+          <Item Id="Hoadon_ListView" Removed="True" />
+          <Item Id="NhomSP_ListView" Removed="True" />
+          <Item Id="Sanpham_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="23.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="23.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="ApplicationUser_ListView" Caption="Users" />
+    <ListView Id="Hoadon_HoadonCTs_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="Hang.Dvt" PropertyName="Hang.Dvt" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="Soluong" Index="2" />
+        <ColumnInfo Id="Dongia" Index="3" />
+        <ColumnInfo Id="Thanhtien" Index="4" Width="77">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <ListView Id="Hoadon_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="Soban" Width="131" />
+        <ColumnInfo Id="Ngay" Width="221" />
+        <ColumnInfo Id="Tongtien" Width="162">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <DetailView Id="HoadonCT_DetailView">
+      <Items>
+        <PropertyEditor Id="Hang" PropertyName="Hang" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="HoadonCT" RelativeSize="100">
+              <LayoutItem Id="Hang" ViewItem="Hang" Index="0" RelativeSize="3.8901601830663615" IsNewNode="True" />
+              <LayoutItem Id="Soluong" Index="1" RelativeSize="2.9748283752860414" />
+              <LayoutItem Id="Dongia" Index="2" RelativeSize="93.13501144164759" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="NhomSP_ListView" ImageName="BO_Security_Permission_Model" />
+  </Views>
+</Application>
